@@ -1,0 +1,27 @@
+Plano de commits — Inference Gateway
+
+A sequencia abaixo organiza as mudancas do projeto em commits revisaveis.
+
+1. chore: configura execução com Node.js e TypeScript
+   git add package.json package-lock.json tsconfig.json .gitignore .env.example
+   git commit -m "chore: configura execução com Node.js e TypeScript"
+
+2. feat: implementa adaptadores de modelos e políticas de falha
+   git add src/errors.ts src/providers.ts src/policies.ts
+   git commit -m "feat: implementa adaptadores de modelos e políticas de falha"
+
+3. feat: persiste consumo e disponibiliza API de inferência autenticada
+   git add src/usage.ts src/gateway.ts src/http.ts src/server.ts
+   git commit -m "feat: persiste consumo e disponibiliza API de inferência autenticada"
+
+4. test: cobre fallback, cotas, concorrência e protocolo dos provedores
+   git add test scripts reports
+   git commit -m "test: cobre fallback, cotas, concorrência e protocolo dos provedores"
+
+5. docs: documenta limites operacionais e implantação
+   Inclui capa, diagrama, capturas, GIF, painel HTML e metadados da execucao real.
+   git add README.md docs/architecture.md docs/ollama-integration.md docs/PRESENTATION.md docs/assets docs/demo COMMITS.txt Dockerfile .dockerignore .github LICENSE
+   git commit -m "docs: documenta limites operacionais e implantação"
+
+Antes de publicar: npm ci; npm run typecheck; npm test; npm run demo
+Revise git status. Nao adicione .env, var/ ou node_modules/.

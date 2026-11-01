@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="title description">
+<title id="title">Inference Gateway — arquitetura implementada</title>
+<desc id="description">Um processo controla admissão, falhas dos provedores e uso diário.</desc>
+<g font-family="&#x27;Segoe UI&#x27;, Inter, Arial, sans-serif"><defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto-start-reverse"><path d="M1 1l5 3-5 3" fill="none" stroke="#53627a" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect x="0" y="0" width="1280" height="760" rx="24" fill="#f4f7fb" stroke="none" />
+<rect x="0" y="0" width="1280" height="9" rx="0" fill="#22d3ee" stroke="none" />
+<text x="56" y="55" font-size="14" font-weight="600" fill="#53627a" letter-spacing="1.8">ARCHITECTURE / 06</text>
+<text x="56" y="104" font-size="35" font-weight="700" fill="#0b1220" letter-spacing="-0.6">Inference Gateway</text>
+<text x="56" y="143" font-size="19" font-weight="400" fill="#53627a" >Um processo controla admissão, falhas dos provedores e uso diário.</text>
+<rect x="1158" y="38" width="66" height="66" rx="16" fill="#0b1220" stroke="none" />
+<text x="1191" y="81" font-size="30" font-weight="700" fill="#22d3ee" text-anchor="middle">06</text>
+<text x="56" y="207" font-size="13" font-weight="600" fill="#53627a" letter-spacing="1.6">REQUISIÇÃO / CONTROLE DE ENTRADA</text>
+<rect x="56" y="233" width="256" height="112" rx="16" fill="#dbe3ee" stroke="none" opacity=".35"/>
+<rect x="56" y="230" width="256" height="112" rx="16" fill="white" stroke="#d7e0ec" />
+<rect x="56" y="251" width="4" height="25" rx="2" fill="#22d3ee" stroke="none" />
+<text x="75" y="265" font-size="18" font-weight="650" fill="#0b1220" >Bearer token</text>
+<text x="75" y="295" font-size="16" font-weight="400" fill="#53627a" >Chave determina cliente</text>
+<text x="75" y="318" font-size="16" font-weight="400" fill="#53627a" >Validação do prompt</text>
+<path d="M320 286H350" stroke="#53627a" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="360" y="233" width="256" height="112" rx="16" fill="#dbe3ee" stroke="none" opacity=".35"/>
+<rect x="360" y="230" width="256" height="112" rx="16" fill="white" stroke="#d7e0ec" />
+<rect x="360" y="251" width="4" height="25" rx="2" fill="#22d3ee" stroke="none" />
+<text x="379" y="265" font-size="18" font-weight="650" fill="#0b1220" >Limites em memória</text>
+<text x="379" y="295" font-size="16" font-weight="400" fill="#53627a" >Janela por minuto</text>
+<text x="379" y="318" font-size="16" font-weight="400" fill="#53627a" >Concorrência global</text>
+<path d="M624 286H654" stroke="#53627a" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="664" y="233" width="256" height="112" rx="16" fill="#dbe3ee" stroke="none" opacity=".35"/>
+<rect x="664" y="230" width="256" height="112" rx="16" fill="white" stroke="#d7e0ec" />
+<rect x="664" y="251" width="4" height="25" rx="2" fill="#22d3ee" stroke="none" />
+<text x="683" y="265" font-size="18" font-weight="650" fill="#0b1220" >Reserva no SQLite</text>
+<text x="683" y="295" font-size="16" font-weight="400" fill="#53627a" >Orçamento diário em UTC</text>
+<text x="683" y="318" font-size="16" font-weight="400" fill="#53627a" >BEGIN IMMEDIATE</text>
+<path d="M928 286H958" stroke="#53627a" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="968" y="233" width="256" height="112" rx="16" fill="#dbe3ee" stroke="none" opacity=".35"/>
+<rect x="968" y="230" width="256" height="112" rx="16" fill="white" stroke="#d7e0ec" />
+<rect x="968" y="251" width="4" height="25" rx="2" fill="#22d3ee" stroke="none" />
+<text x="987" y="265" font-size="18" font-weight="650" fill="#0b1220" >Provedores em ordem</text>
+<text x="987" y="295" font-size="16" font-weight="400" fill="#53627a" >Ollama /api/generate</text>
+<text x="987" y="318" font-size="16" font-weight="400" fill="#53627a" >URL só da configuração</text>
+<text x="56" y="441" font-size="13" font-weight="600" fill="#53627a" letter-spacing="1.6">EXECUÇÃO / RECUPERAÇÃO + CONSUMO</text>
+<rect x="56" y="467" width="256" height="112" rx="16" fill="#dbe3ee" stroke="none" opacity=".35"/>
+<rect x="56" y="464" width="256" height="112" rx="16" fill="white" stroke="#d7e0ec" />
+<rect x="56" y="485" width="4" height="25" rx="2" fill="#22d3ee" stroke="none" />
+<text x="75" y="499" font-size="18" font-weight="650" fill="#0b1220" >Tentativa com timeout</text>
+<text x="75" y="529" font-size="16" font-weight="400" fill="#53627a" >AbortSignal por chamada</text>
+<text x="75" y="552" font-size="16" font-weight="400" fill="#53627a" >Sem retry no mesmo modelo</text>
+<path d="M320 520H350" stroke="#53627a" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="360" y="467" width="256" height="112" rx="16" fill="#dbe3ee" stroke="none" opacity=".35"/>
+<rect x="360" y="464" width="256" height="112" rx="16" fill="white" stroke="#d7e0ec" />
+<rect x="360" y="485" width="4" height="25" rx="2" fill="#22d3ee" stroke="none" />
+<text x="379" y="499" font-size="18" font-weight="650" fill="#0b1220" >Fallback + circuito</text>
+<text x="379" y="529" font-size="16" font-weight="400" fill="#53627a" >Falha → próximo provedor</text>
+<text x="379" y="552" font-size="16" font-weight="400" fill="#53627a" >Uma sonda no half-open</text>
+<path d="M624 520H654" stroke="#53627a" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="664" y="467" width="256" height="112" rx="16" fill="#dbe3ee" stroke="none" opacity=".35"/>
+<rect x="664" y="464" width="256" height="112" rx="16" fill="white" stroke="#d7e0ec" />
+<rect x="664" y="485" width="4" height="25" rx="2" fill="#22d3ee" stroke="none" />
+<text x="683" y="499" font-size="18" font-weight="650" fill="#0b1220" >Registrar resultado</text>
+<text x="683" y="529" font-size="16" font-weight="400" fill="#53627a" >Status · latência · tentativas</text>
+<text x="683" y="552" font-size="16" font-weight="400" fill="#53627a" >Tokens conhecidos ou null</text>
+<path d="M928 520H958" stroke="#53627a" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="968" y="467" width="256" height="112" rx="16" fill="#dbe3ee" stroke="none" opacity=".35"/>
+<rect x="968" y="464" width="256" height="112" rx="16" fill="white" stroke="#d7e0ec" />
+<rect x="968" y="485" width="4" height="25" rx="2" fill="#22d3ee" stroke="none" />
+<text x="987" y="499" font-size="18" font-weight="650" fill="#0b1220" >JSON + GET /usage</text>
+<text x="987" y="529" font-size="16" font-weight="400" fill="#53627a" >Uso isolado por cliente</text>
+<text x="987" y="552" font-size="16" font-weight="400" fill="#53627a" >Sem texto persistido</text>
+<path d="M1096 352V392H36V520H48" stroke="#53627a" stroke-width="1.8" fill="none" stroke-dasharray="5 5" marker-end="url(#arrow)"/>
+<rect x="440.0" y="374" width="252" height="30" rx="9" fill="#f4f7fb" stroke="none" />
+<text x="566.0" y="394" font-size="14" font-weight="500" fill="#53627a" text-anchor="middle">ordem configurada</text>
+<circle cx="66" cy="644" r="5" fill="#22d3ee"/>
+<text x="83" y="650" font-size="13" font-weight="600" fill="#53627a" letter-spacing="1.0">POLÍTICAS AUDITÁVEIS · DADOS DE USO PERSISTIDOS</text>
+<path d="M56 708H1224" stroke="#d7e0ec" stroke-width="1"/>
+<text x="56" y="738" font-size="17" font-weight="400" fill="#53627a" >Cancelar HTTP não garante interromper o cálculo no servidor do modelo.</text></g>
+</svg>

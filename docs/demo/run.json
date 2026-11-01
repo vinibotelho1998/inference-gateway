@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "project": "06-inference-gateway",
+  "run_id": "fb64fcd462a34679bd6021d3d06c5e38",
+  "kind": "synthetic_fixture",
+  "started_at": "2026-10-27T12:53:38.851143+00:00",
+  "status": "passed",
+  "base_url": "http://127.0.0.1:8006",
+  "data_provenance": "Prompt sintético e resposta de inferência real do Ollama; nenhum texto foi pré-gravado como resposta.",
+  "timing_note": "Observed wall time for one execution; not a performance benchmark.",
+  "credentials_saved": false,
+  "steps": [
+    {
+      "id": "usage_before",
+      "title": "Uso antes da inferência",
+      "timestamp": "2026-10-27T12:53:38.851143+00:00",
+      "endpoint": "http://127.0.0.1:8006/v1/usage",
+      "method": "GET",
+      "request": null,
+      "status_code": 200,
+      "response": {
+        "day": "2026-10-27",
+        "timezone": "UTC",
+        "dailyBudget": 1000,
+        "usage": [
+          {
+            "status": "ok",
+            "requests": 2,
+            "averageLatencyMs": 712.690039499983,
+            "inputTokens": 92,
+            "outputTokens": 70,
+            "requestsWithInputTokens": 2,
+            "requestsWithOutputTokens": 2
+          }
+        ]
+      },
+      "duration_ms": 2.4,
+      "status": "passed",
+      "checks": [
+        {
+          "name": "HTTP 200",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "id": "inference",
+      "title": "Inferência no modelo local",
+      "timestamp": "2026-10-27T12:53:38.853567+00:00",
+      "endpoint": "http://127.0.0.1:8006/v1/infer",
+      "method": "POST",
+      "request": {
+        "prompt": "Explique em uma única frase curta, em português, por que a idempotência evita duplicação em uma API. Não use listas."
+      },
+      "status_code": 200,
+      "response": {
+        "requestId": "99f2028f-df3d-4f1c-86b4-66c5999d40d9",
+        "provider": "local-qwen",
+        "kind": "ollama",
+        "model": "qwen2.5:1.5b",
+        "text": "A idempotência na API evita duplicação ao garantir que um mesmo chamado de API tenha o mesmo efeito que um único chamado, sem necessidade de repeti-lo.",
+        "fallbackUsed": false,
+        "attempted": [
+          "local-qwen"
+        ],
+        "usage": {
+          "inputTokens": 63,
+          "outputTokens": 42
+        },
+        "elapsedMs": 1111.789619999996
+      },
+      "duration_ms": 1126.664,
+      "status": "passed",
+      "checks": [
+        {
+          "name": "HTTP 200",
+          "passed": true
+        },
+        {
+          "name": "Provedor Ollama real",
+          "passed": true
+        },
+        {
+          "name": "Texto e contagem de tokens retornados",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "id": "usage_after",
+      "title": "Uso registrado pelo gateway",
+      "timestamp": "2026-10-27T12:53:39.980281+00:00",
+      "endpoint": "http://127.0.0.1:8006/v1/usage",
+      "method": "GET",
+      "request": null,
+      "status_code": 200,
+      "response": {
+        "day": "2026-10-27",
+        "timezone": "UTC",
+        "dailyBudget": 1000,
+        "usage": [
+          {
+            "status": "ok",
+            "requests": 3,
+            "averageLatencyMs": 845.7232329999873,
+            "inputTokens": 155,
+            "outputTokens": 112,
+            "requestsWithInputTokens": 3,
+            "requestsWithOutputTokens": 3
+          }
+        ]
+      },
+      "duration_ms": 2.106,
+      "status": "passed",
+      "checks": [
+        {
+          "name": "HTTP 200",
+          "passed": true
+        },
+        {
+          "name": "Inferência contabilizada",
+          "passed": true
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "provider": "local-qwen",
+    "kind": "ollama",
+    "model": "qwen2.5:1.5b",
+    "text": "A idempotência na API evita duplicação ao garantir que um mesmo chamado de API tenha o mesmo efeito que um único chamado, sem necessidade de repeti-lo.",
+    "input_tokens": 63,
+    "output_tokens": 42,
+    "fallback_used": false,
+    "provider_elapsed_ms": 1111.789619999996,
+    "successful_requests_before": 2,
+    "successful_requests_after": 3
+  },
+  "supporting_evidence": [],
+  "finished_at": "2026-10-27T12:53:39.982435+00:00"
+}

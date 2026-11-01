@@ -1,0 +1,36 @@
+{
+  "source": "Browser screenshots of the recorded API presentation; not AI-generated images.",
+  "capture_run_id": "fb64fcd462a34679bd6021d3d06c5e38",
+  "api_capture_started_at": "2026-10-27T12:53:38.851143+00:00",
+  "api_capture_finished_at": "2026-10-27T12:53:39.982435+00:00",
+  "encoded_at": "2026-10-27T13:04:10.334821+00:00",
+  "dimensions": [
+    1265,
+    730
+  ],
+  "frames": 3,
+  "timing": "Replay holds are for readability, not measured request duration.",
+  "source_record": "../demo/run.json",
+  "screenshot_sha256": "3ab1b1b5f67e8c4efc1d5dbb3a792d23837479c5caec48833a182cd76aa3f0f2",
+  "gif_sha256": "3550ef3a6e110674e24152bbea59341a6cf74e2d10575258d72ff588d81c910d",
+  "steps": [
+    {
+      "id": "usage_before",
+      "title": "Uso antes da inferência",
+      "hold_ms": 1800,
+      "frame_sha256": "7fb72d8bae39d8db17701e7440b001629a8d3be8bf17c8a6172879741b663112"
+    },
+    {
+      "id": "inference",
+      "title": "Inferência no modelo local",
+      "hold_ms": 1800,
+      "frame_sha256": "3ab1b1b5f67e8c4efc1d5dbb3a792d23837479c5caec48833a182cd76aa3f0f2"
+    },
+    {
+      "id": "usage_after",
+      "title": "Uso registrado pelo gateway",
+      "hold_ms": 2800,
+      "frame_sha256": "f78b414bb8f6096b6f9d71200cba5919f4103af77e17c3309698d843b632772e"
+    }
+  ]
+}
