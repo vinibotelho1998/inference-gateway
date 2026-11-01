@@ -1,0 +1,11 @@
+{
+  "name": "inference-gateway", "version": "0.1.0", "private": true, "type": "module",
+  "description": "Gateway de inferencia com fallback, circuit breaker e contabilizacao persistente por cliente.",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "start": "node --env-file=.env src/server.ts", "demo": "node scripts/demo.ts",
+    "test": "node --test test/*.test.ts", "typecheck": "tsc --noEmit",
+    "verify:ollama": "node scripts/verify-ollama.ts"
+  },
+  "devDependencies": { "@types/node": "^24.0.0", "typescript": "^5.9.0" }
+}
