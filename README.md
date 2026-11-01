@@ -6,7 +6,7 @@ Uma camada de entrada para aplicações que chamam modelos de IA. Ela controla o
 
 **Entrada autenticada · orçamento diário persistente · adaptação ao Ollama**
 
-O serviço foi implementado em TypeScript sobre Node.js, com SQLite para contabilização. Os modelos são configurados pelo operador e podem executar localmente.
+O serviço foi implementado em TypeScript sobre Node.js, com SQLite para contabilização. Ele encaminha as requisições a **modelos de linguagem configurados pelo operador**, que podem executar localmente pelo Ollama; o gateway cuida da operação dessas chamadas.
 
 ## Políticas de operação
 
