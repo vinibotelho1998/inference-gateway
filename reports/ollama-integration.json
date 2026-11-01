@@ -1,0 +1,141 @@
+{
+  "startedAt": "2026-10-27T03:52:48.162Z",
+  "validation": "real Ollama; deployed gateway HTTP; isolated HTTP gateway with unreachable primary and real backup",
+  "generationModel": "qwen2.5:1.5b",
+  "steps": [
+    {
+      "name": "real-model-preflight",
+      "elapsedMs": 17,
+      "details": {
+        "version": "0.40.11",
+        "capabilities": [
+          "completion",
+          "tools"
+        ],
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen2",
+          "families": [
+            "qwen2"
+          ],
+          "parameter_size": "1.5B",
+          "quantization_level": "Q4_K_M"
+        }
+      }
+    },
+    {
+      "name": "deployed-gateway-real-inference-and-accounting",
+      "elapsedMs": 554,
+      "details": {
+        "health": {
+          "status": "ok",
+          "providers": [
+            {
+              "id": "local-qwen",
+              "kind": "ollama"
+            }
+          ],
+          "active": 0
+        },
+        "result": {
+          "requestId": "35461195-7283-42a3-974e-b841350467b6",
+          "provider": "local-qwen",
+          "kind": "ollama",
+          "model": "qwen2.5:1.5b",
+          "text": "Um gateway de modelos de IA é um sistema que permite a interação eficaz entre diferentes sistemas de IA.",
+          "fallbackUsed": false,
+          "attempted": [
+            "local-qwen"
+          ],
+          "usage": {
+            "inputTokens": 46,
+            "outputTokens": 24
+          },
+          "elapsedMs": 486.95764300000155
+        },
+        "usageAfter": {
+          "day": "2026-10-27",
+          "timezone": "UTC",
+          "dailyBudget": 1000,
+          "usage": [
+            {
+              "status": "ok",
+              "requests": 1,
+              "averageLatencyMs": 486.95764300000155,
+              "inputTokens": 46,
+              "outputTokens": 24,
+              "requestsWithInputTokens": 1,
+              "requestsWithOutputTokens": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "unreachable-primary-real-backup-and-open-circuit",
+      "elapsedMs": 1131,
+      "details": {
+        "primaryFailure": "real connection refused after closing a reserved local listener",
+        "first": {
+          "requestId": "7d05c945-d987-4571-b51c-89b8433e2818",
+          "provider": "real-backup",
+          "kind": "ollama",
+          "model": "qwen2.5:1.5b",
+          "text": "Um gateway de modelos serve para conectar diferentes sistemas e algoritmos de aprendizado de máquina, facilitando a comunicação entre sistemas e permitindo a integração de diferentes modelos de aprendizado de máquina em um único ambiente.",
+          "fallbackUsed": true,
+          "attempted": [
+            "unreachable-primary",
+            "real-backup"
+          ],
+          "usage": {
+            "inputTokens": 46,
+            "outputTokens": 47
+          },
+          "elapsedMs": 908.4874
+        },
+        "second": {
+          "requestId": "ceeddb93-5fd7-4f1d-aa17-88555d42371c",
+          "provider": "real-backup",
+          "kind": "ollama",
+          "model": "qwen2.5:1.5b",
+          "text": "Responda conforme solicitado.",
+          "fallbackUsed": true,
+          "attempted": [
+            "real-backup"
+          ],
+          "usage": {
+            "inputTokens": 38,
+            "outputTokens": 8
+          },
+          "elapsedMs": 175.1187
+        },
+        "circuits": [
+          {
+            "id": "unreachable-primary",
+            "failures": 1,
+            "state": "open"
+          }
+        ],
+        "usage": {
+          "day": "2026-10-27",
+          "timezone": "UTC",
+          "dailyBudget": 10,
+          "usage": [
+            {
+              "status": "ok",
+              "requests": 2,
+              "averageLatencyMs": 541.80305,
+              "inputTokens": 84,
+              "outputTokens": 55,
+              "requestsWithInputTokens": 2,
+              "requestsWithOutputTokens": 2
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "passed": true,
+  "finishedAt": "2026-10-27T03:52:49.865Z"
+}
